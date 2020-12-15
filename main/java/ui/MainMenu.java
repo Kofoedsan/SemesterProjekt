@@ -17,7 +17,7 @@ public class MainMenu {
     private Database database = new Database(USER, PASSWORD, URL);
     private DbMenuCardMapper dbMenuCardMapper = new DbMenuCardMapper(database);
     private DbOrderMapper dbOrderMapper = new DbOrderMapper(database);
-    private Sortering sortering;
+    private Sortering sortering = new Sortering(dbOrderMapper);
 
     public void mainMenuLoop() {
 
@@ -42,7 +42,8 @@ public class MainMenu {
                     updatePizza();
                     break;
                 case 6:
-//                    sortering.showOrdersByTime();
+//                    dbOrderMapper.getAllOrders();
+                   sortering.showOrdersByTime();
                     break;
                 case 7:
                     insertOrder();

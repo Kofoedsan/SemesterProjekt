@@ -2,10 +2,18 @@ package ui;
 
 import persistence.DbOrderMapper;
 
-public class Sortering {
-    DbOrderMapper orderMapper ;
 
-public void showOrdersByTime(){
+public class Sortering {
+
+   private DbOrderMapper dbOrderMapper;
+
+    public Sortering(DbOrderMapper dbOrderMapper) {
+        this.dbOrderMapper = dbOrderMapper;
+    }
+
+    public void showOrdersByTime(){
+        dbOrderMapper.getAllOrders();
+        System.out.println("det virker");
 
 
 }
