@@ -17,6 +17,7 @@ public class MainMenu {
     private Database database = new Database(USER, PASSWORD, URL);
     private DbMenuCardMapper dbMenuCardMapper = new DbMenuCardMapper(database);
     private DbOrderMapper dbOrderMapper = new DbOrderMapper(database);
+    private Sortering sortering;
 
     public void mainMenuLoop() {
 
@@ -41,14 +42,16 @@ public class MainMenu {
                     updatePizza();
                     break;
                 case 6:
-                    dbOrderMapper.getAllOrders();
+//                    sortering.showOrdersByTime();
                     break;
                 case 7:
                     insertOrder();
                     break;
                 case 8:
+
                     running = false;
                     break;
+
             }
         }
         System.out.println("Tak for denne gang!");
