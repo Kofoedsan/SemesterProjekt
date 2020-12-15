@@ -1,6 +1,5 @@
 package persistence;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
 import domain.Order;
 
 import java.sql.*;
@@ -15,15 +14,11 @@ public class DbOrderMapper {
         this.database = database;
     }
 
-    public DbOrderMapper() {
-
-    }
-
+        public List<Order> orderList = new ArrayList<>();
     public List<Order> getAllOrders() {
 
-        List<Order> orderList = new ArrayList<>();
 
-        String sql = "select * from mario.order";
+        String sql = "select * from mario.order  order by pickup_time DESC ";
 
         try (Connection connection = database.connect()) {
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
@@ -45,7 +40,6 @@ public class DbOrderMapper {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        System.out.print(orderList);
         return orderList;
     }
 

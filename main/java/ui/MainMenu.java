@@ -42,17 +42,14 @@ public class MainMenu {
                     updatePizza();
                     break;
                 case 6:
-//                    dbOrderMapper.getAllOrders();
                    sortering.showOrdersByTime();
                     break;
                 case 7:
                     insertOrder();
                     break;
                 case 8:
-
                     running = false;
                     break;
-
             }
         }
         System.out.println("Tak for denne gang!");
