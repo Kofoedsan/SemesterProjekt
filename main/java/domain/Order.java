@@ -19,6 +19,7 @@ public class Order {
         remove = false;
 
     }
+
     public Order(int orderNr, int pizzaId, int amount, int pickuptime, Timestamp ordertime, String custemorName, String phone) {
         this.orderNr = orderNr;
         this.pizzaId = pizzaId;
@@ -114,13 +115,13 @@ public class Order {
 
     @Override
     public String toString() {
-        return  "orderNr= " + orderNr + "\n" +
-                "pizzaId= " + pizzaId + "\n" +
-                "amount= " + amount + "\n" +
-                "pickuptime= " + pickuptime + "\n" +
-                "ordertime= " + ordertime + "\n" +
-                "customerName= " + custemorName + "\n" +
-                "phone= " + phone + "\n";
+        return "\n" + "orderNr= " + orderNr + " " +
+                "pizzaId= " + pizzaId + " " +
+                "amount= " + amount + " " +
+                "pickuptime= " + pickuptime + " " +
+                "ordertime= " + ordertime + " " +
+                "customerName= " + custemorName + " " +
+                "phone= " + phone ;
     }
 
 }

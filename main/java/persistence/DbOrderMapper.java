@@ -18,7 +18,7 @@ public class DbOrderMapper {
     public List<Order> getAllOrders() {
 
 
-        String sql = "select * from mario.order  order by pickup_time DESC ";
+        String sql = "select * from mario.order  order by order_time DESC , pickup_time ASC ";
 
         try (Connection connection = database.connect()) {
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
