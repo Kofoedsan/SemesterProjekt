@@ -29,9 +29,9 @@ public class DbOrderMapper {
                     int amount = rs.getInt("amount");
                     int pickup_time = rs.getInt("pickup_time");
                     Timestamp order_time = rs.getTimestamp("order_time");
+                    //TODO sortering af dato og pickuptime
                     String custemor_name = rs.getString("custemor_name");
                     String phone = rs.getString("phone");
-//                    int price = rs.getInt("price");
                     orderList.add(new Order(order_nr, pizza_id, amount, pickup_time, order_time, custemor_name, phone));
                 }
             } catch (SQLException throwables) {
